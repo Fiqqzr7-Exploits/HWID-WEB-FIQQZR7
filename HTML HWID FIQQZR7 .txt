@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIQQZR7 KEY GENERATOR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0f1f 0%, #1a1f35 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(10, 15, 30, 0.95);
+            border: 2px solid #00a6ff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 166, 255, 0.3);
+        }
+        
+        h1 {
+            color: #00a6ff;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #8a9bb5;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            background: #1a1f35;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            color: #00a6ff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #8a9bb5;
+            font-size: 12px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            min-width: 200px;
+        }
+        
+        .btn-primary {
+            background: #00a6ff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0088cc;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 166, 255, 0.4);
+        }
+        
+        .btn-success {
+            background: #00c851;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #009940;
+        }
+        
+        .btn-danger {
+            background: #ff4444;
+            color: white;
+        }
+        
+        .key-container {
+            background: #1a1f35;
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .key-item {
+            background: #0a0f1f;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 16px;
+            color: #00ff00;
+            border-left: 4px solid #00a6ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            background: #00a6ff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .progress {
+            margin: 20px 0;
+            height: 4px;
+            background: #2a3f5f;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: #00a6ff;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #4a5f7f;
+            font-size: 12px;
+        }
+        
+        .footer a {
+            color: #00a6ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ FIQQZR7 KEY GENERATOR</h1>
+        <p class="subtitle">Generate 200 HWID keys untuk sistem login</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalKeys">0</div>
+                <div class="stat-label">TOTAL KEYS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="availableKeys">0</div>
+                <div class="stat-label">AVAILABLE</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="usedKeys">0</div>
+                <div class="stat-label">USED</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn-primary" onclick="generateKeys()">🚀 GENERATE 200 KEYS</button>
+            <button class="btn-success" onclick="copyAllKeys()">📋 COPY ALL KEYS</button>
+            <button class="btn-danger" onclick="clearKeys()">🗑 CLEAR KEYS</button>
+        </div>
+        
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div class="key-container" id="keyContainer">
+            <div style="text-align: center; color: #8a9bb5; padding: 50px;">
+                Click generate to create keys
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>FIQQZR7 FAMILY • 200 KEY LIMIT • HWID PROTECTED</p>
+            <p><a href="#" onclick="downloadKeys()">📥 Download Keys (TXT)</a> | <a href="#" onclick="exportCSV()">📊 Export CSV</a></p>
+        </div>
+    </div>
+
+    <script>
+        let keys = [];
+        
+        function generateKey() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const part1 = Array(4).fill().map(() => 
+                chars[Math.floor(Math.random() * chars.length)]).join('');
+            const part2 = Array(4).fill().map(() => 
+                chars[Math.floor(Math.random() * chars.length)]).join('');
+            return `FIQ-${part1}-${part2}`;
+        }
+        
+        function generateKeys() {
+            keys = [];
+            const total = 200;
+            const container = document.getElementById('keyContainer');
+            const progressBar = document.getElementById('progressBar');
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < total; i++) {
+                keys.push(generateKey());
+                
+                // Update progress
+                const percent = ((i + 1) / total) * 100;
+                progressBar.style.width = percent + '%';
+                
+                // Add to display (every 10 keys to avoid lag)
+                if (i % 10 === 0 || i === total - 1) {
+                    updateDisplay();
+                }
+            }
+            
+            updateStats();
+            progressBar.style.width = '100%';
+        }
+        
+        function updateDisplay() {
+            const container = document.getElementById('keyContainer');
+            container.innerHTML = '';
+            
+            keys.forEach((key, index) => {
+                const keyDiv = document.createElement('div');
+                keyDiv.className = 'key-item';
+                keyDiv.innerHTML = `
+                    <span>${index + 1}. ${key}</span>
+                    <button class="copy-btn" onclick="copyKey('${key}')">COPY</button>
+                `;
+                container.appendChild(keyDiv);
+            });
+        }
+        
+        function updateStats() {
+            document.getElementById('totalKeys').textContent = keys.length;
+            document.getElementById('availableKeys').textContent = keys.length;
+            document.getElementById('usedKeys').textContent = 0;
+        }
+        
+        function copyKey(key) {
+            navigator.clipboard.writeText(key).then(() => {
+                alert('✅ Key copied: ' + key);
+            });
+        }
+        
+        function copyAllKeys() {
+            const text = keys.join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ ' + keys.length + ' keys copied to clipboard!');
+            });
+        }
+        
+        function clearKeys() {
+            if (confirm('Clear all keys?')) {
+                keys = [];
+                document.getElementById('keyContainer').innerHTML = 
+                    '<div style="text-align: center; color: #8a9bb5; padding: 50px;">No keys generated</div>';
+                updateStats();
+                document.getElementById('progressBar').style.width = '0%';
+            }
+        }
+        
+        function downloadKeys() {
+            const text = keys.join('\n');
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'fiqqzr7_keys.txt';
+            a.click();
+        }
+        
+        function exportCSV() {
+            let csv = 'Key,Status,Expiry\n';
+            keys.forEach(key => {
+                csv += `${key},available,2025-12-31\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'fiqqzr7_keys.csv';
+            a.click();
+        }
+    </script>
+</body>
+</html>
